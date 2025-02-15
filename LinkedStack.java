@@ -14,17 +14,31 @@ public class LinkedStack {
         this.top = null; 
         
     }
-    public boolean isEmpty()
+     public boolean isEmpty()
     {
-        // TYPE YOUR CODE HERE
+        return top==null;
     }
     public void push(int data) 
-    {
-         // TYPE YOUR CODE HERE    
+{
+    Node newNode= new Node(data);
+    newNode.next=top;
+    top=newNode;
 }
     public int pop() 
     {
-        // TYPE YOUR CODE HERE
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+            return-1;
+        }
+        else
+        {
+            int data=top.data;
+            top=top.next;
+            return data;
+        }
+
+        
     }
      public static void main(String[] args) {
         LinkedStack stack = new LinkedStack();
